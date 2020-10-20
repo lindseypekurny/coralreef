@@ -314,6 +314,18 @@ plot(turf_plot, xlab = 'Coral', ylab = 'Macroalgae')
 
 ```
 
+Part B
+
+6.Describe the ecological aspects of the system to the other team. You should help themunderstand the different components that are integral to the ecology and what outputsand insights come from your model. Have the other team describe the social aspects ofthe system in depth.
+
+7.Build a consensus flow diagram that combines the ecological and social models together.
+
+8.As a group, what do you predict will happen to the long-term dynamics when youcouple the social and ecological systems together? Which parameters do you anticipate will be the most important for determining overall system dynamics?
+
+9.Program the following model in R. Be sure to understand how the model is beingcoupled together. This is the same model you worked with in part A, but with the inclusion of the x-variable, which is the fraction of conservationists present in the population. The social dynamics team should help you with the interpretations of this equation.
+
+10.Similar to part A, produce figures and design analyses to address the following questions:(a) What are the long-term dynamics of the system with the default parameters givenbelow? (b) What are the most important parameters in determining the long-term dynamics?
+
 ```{r}
 
 require(deSolve)
@@ -343,3 +355,15 @@ legend('topright',legend = c('macroalgae','coral reef','turf algae','parrotfish'
 matplot(out[ , 1], out[ , 6], type = "l", xlab = "time", ylab = "Fraction that are conservationists",main = "Conservation opinion", lwd = 2,ylim=c(0,1),col=5)
 
 ```
+
+
+Part C
+Discussion
+
+11.How did your predictions about the coupled socio-ecological systems line up with theresults from the model? How did your results line up with the original modeling paper?
+
+12.How did your flow diagrams change over the course of the lessons? What did you learnthrough the process of developing flow diagrams with others?
+
+13.What were the limitations of the coupled socio-ecological model used here? Whatchanges would you make to the model?
+
+14.What aspects of this assignment were most or least useful? How would you improvethis assignment?
