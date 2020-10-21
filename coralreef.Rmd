@@ -343,7 +343,7 @@ require(deSolve)
 
 pars <- c(a = 0.1, gamma = 0.8, r = 1.0, d = 0.44, s = 0.49, sigma = 0.5, kappa= 1.014, j=1.68, sigma = 0.5, phi = 0.2)
 
-yini  <- c(M = 0.6, C = 0.1, T = .3, P = .2, X = 0.9)
+yini  <- c(M = 0.001, C = 0.7, T = .3, P = .1, X = 0.1)
 times <- seq(0, 100, by = 0.1)
 
 coupled_model <- function(Time, State, Pars) {
@@ -369,9 +369,15 @@ matplot(out[ , 1], out[ , 6], type = "l", xlab = "time", ylab = "Fraction that a
 
 **#10.Similar to part A, produce figures and design analyses to address the following questions:(a) What are the long-term dynamics of the system with the default parameters given below? (b) What are the most important parameters in determining the long-term dynamics?**
 
-a. The long-term dynamics for this reef do not look very good. Macroalgae, even when parrotfish population is set to 0.99, takes over the coral. As macroalgae grows, however, so does conservation opionion. Conservation opinion seems to have grown too late to create change in this ecosystem.
+a. 
+
+The long-term dynamics for this reef do not look very good. Macroalgae, even when parrotfish population is set to 0.99 and coral makes up 75% of the cover, macroalgae takes over the coral. As macroalgae grows, however, so does conservation opionion. Conservation opinion seems to have grown too late to create change in this ecosystem.
+
+Regardless of initial parameters, this model shows it is unlikely to prevent macroalgae from taking over the reef. In order to prevent this from happening, additional influential factors could be added to the model.
 
 b. 
+
+It seems as though macroalgae plats an important part in the long-term dynamics. If its population starts low, parrotfish quickly loose their food source. As soon as the parrotfish disappaer, macroalgae growth takes off.
 
 
 **Part C**
@@ -379,10 +385,26 @@ b.
 
 **#11.How did your predictions about the coupled socio-ecological systems line up with the results from the model? How did your results line up with the original modeling paper?**
 
+I don't believe our initial predictions aligned well with this model. Our group predicted parrotfish, coral, and willingness to participate would be the most influential drivers in this socio-ecological system. In comparison, macroalgae seems to drive the long term dynamics of this system. No matter how I change the parameters in 'yini', the macroalgae always grows exponentially while the other organisms die off. Willingness to participate grows as the macroalgae does, but it seems as though the willingness to participate increases after anything can actually be done to protect the coral.
+
+
 
 
 **#12.How did your flow diagrams change over the course of the lessons? What did you learn through the process of developing flow diagrams with others?**
 
+Our first flow diagram was relatively complex. Our second diagram lost much of its complexity and was therefore easier to model. Joining up with the social team, however, added complexity to our flow diagram. Our diagrams were very circular and not linear. The non-linear nature of our flow diagrams displays how complex interactions really are; if you can just one parameter, it's effects may be felt directly by multiple other parameters.
+
 **#13.What were the limitations of the coupled socio-ecological model used here? What changes would you make to the model?**
 
-**#14.What aspects of this assignment were most or least useful? How would you improvethis assignment?**
+Limitations of the coupled socio-ecological model may include the un-predictability of humans. Historically, human behavior is difficult to study. Unforeseen outside influences could potentially cause a large surge in support for conservation, or a large drop.
+
+This model also does not take into account disease. An outbreak of disease in any of the species in this model could drastically change the long-term dynamics of this system. If possible, I would include a segment including the probability of disease in this system.
+
+
+**#14.What aspects of this assignment were most or least useful? How would you improve this assignment?**
+
+Working with this code was the most useful to me personally. I feel as though I am still building up my arsenal of R tools, and I will definitely be saving this code to hopefully use in future projects.
+
+The equations were also useful for me - historically, I have always avoided math, but I am finding myself more and more drawn to quantitative analysis. I enjoyed going through each section of the equations and trying to determine how each segment influenced the others.
+
+And of course, coral reefs are such a fun subject to think on. I have my Advanced PADI, but I know almost nothing about coral reefs. I really appreciate the applicableness of each case study provided in this class.
