@@ -314,17 +314,28 @@ plot(turf_plot, xlab = 'Coral', ylab = 'Macroalgae')
 
 ```
 
-Part B
+**Part B**
 
-6.Describe the ecological aspects of the system to the other team. You should help themunderstand the different components that are integral to the ecology and what outputsand insights come from your model. Have the other team describe the social aspects ofthe system in depth.
+**#6.Describe the ecological aspects of the system to the other team. You should help them understand the different components that are integral to the ecology and what outputs and insights come from your model. Have the other team describe the social aspects ofthe system in depth.**
 
-7.Build a consensus flow diagram that combines the ecological and social models together.
+**#7.Build a consensus flow diagram that combines the ecological and social models together.**
 
-8.As a group, what do you predict will happen to the long-term dynamics when youcouple the social and ecological systems together? Which parameters do you anticipate will be the most important for determining overall system dynamics?
+```{r echo=FALSE}
 
-9.Program the following model in R. Be sure to understand how the model is beingcoupled together. This is the same model you worked with in part A, but with the inclusion of the x-variable, which is the fraction of conservationists present in the population. The social dynamics team should help you with the interpretations of this equation.
+knitr::include_graphics('Eco_Socio Flow chart.png')
 
-10.Similar to part A, produce figures and design analyses to address the following questions:(a) What are the long-term dynamics of the system with the default parameters givenbelow? (b) What are the most important parameters in determining the long-term dynamics?
+```
+
+
+**#8.As a group, what do you predict will happen to the long-term dynamics when you couple the social and ecological systems together? Which parameters do you anticipate will be the most important for determining overall system dynamics?**
+
+Coupling the social and ecological systems together changes some of our expectations for the long-term dynamics of the overall system. The social system has the ability to influence the health of the ecological system. For example, if more people are willing to participate in conservation, more focus will be put on protecting corals and parrotfish. If, on the other hand, less people are willing to participate or value economic values of hunting smaller fish, like parrotfish, the ecological system may continue on its path to collapse.
+
+
+
+**#9.Program the following model in R. Be sure to understand how the model is being coupled together. This is the same model you worked with in part A, but with the inclusion of the x-variable, which is the fraction of conservationists present in the population. The social dynamics team should help you with the interpretations of this equation.**
+
+More coral and more parrotfish, less conservation opinion? Hmmm...
 
 ```{r}
 
@@ -332,7 +343,7 @@ require(deSolve)
 
 pars <- c(a = 0.1, gamma = 0.8, r = 1.0, d = 0.44, s = 0.49, sigma = 0.5, kappa= 1.014, j=1.68, sigma = 0.5, phi = 0.2)
 
-yini  <- c(M = 0.01, C = 0.9, T = 0, P = 1, X = 0.5)
+yini  <- c(M = 0.6, C = 0.1, T = .3, P = .2, X = 0.9)
 times <- seq(0, 100, by = 0.1)
 
 coupled_model <- function(Time, State, Pars) {
@@ -356,14 +367,22 @@ matplot(out[ , 1], out[ , 6], type = "l", xlab = "time", ylab = "Fraction that a
 
 ```
 
+**#10.Similar to part A, produce figures and design analyses to address the following questions:(a) What are the long-term dynamics of the system with the default parameters given below? (b) What are the most important parameters in determining the long-term dynamics?**
 
-Part C
-Discussion
+a. The long-term dynamics for this reef do not look very good. Macroalgae, even when parrotfish population is set to 0.99, takes over the coral. As macroalgae grows, however, so does conservation opionion. Conservation opinion seems to have grown too late to create change in this ecosystem.
 
-11.How did your predictions about the coupled socio-ecological systems line up with theresults from the model? How did your results line up with the original modeling paper?
+b. 
 
-12.How did your flow diagrams change over the course of the lessons? What did you learnthrough the process of developing flow diagrams with others?
 
-13.What were the limitations of the coupled socio-ecological model used here? Whatchanges would you make to the model?
+**Part C**
+**Discussion**
 
-14.What aspects of this assignment were most or least useful? How would you improvethis assignment?
+**#11.How did your predictions about the coupled socio-ecological systems line up with the results from the model? How did your results line up with the original modeling paper?**
+
+
+
+**#12.How did your flow diagrams change over the course of the lessons? What did you learn through the process of developing flow diagrams with others?**
+
+**#13.What were the limitations of the coupled socio-ecological model used here? What changes would you make to the model?**
+
+**#14.What aspects of this assignment were most or least useful? How would you improvethis assignment?**
