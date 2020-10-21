@@ -340,9 +340,11 @@ Coupling the social and ecological systems together changes some of our expectat
 
 require(deSolve)
 
-pars <- c(a = 0.1, gamma = 0.8, r = 1.0, d = 0.44, s = 0.49, sigma = 0.5, kappa= 1.014, j=1.68, sigma = 0.5, phi = 0.2)
+pars <- c(a = 0.01, gamma = 0.8, r = 1.0, d = 0.44, s = 1, sigma = 0.5, kappa= 1.014, j=1.68, sigma = 0.5, phi = 0.2)
 
-yini  <- c(M = 0.001, C = 0.7, T = .3, P = .1, X = 0.1)
+#pars <- c(a = 0.1, gamma = 0.8, r = 1.0, d = 0.44, s = 0.49, sigma = 0.5, kappa= 1.014, j=1.68, sigma = 0.5, phi = 0.2) ### original values
+
+yini  <- c(M = 0.2, C = 0.6, T = .2, P = 5, X = .9)
 times <- seq(0, 100, by = 0.1)
 
 coupled_model <- function(Time, State, Pars) {
@@ -370,21 +372,24 @@ matplot(out[ , 1], out[ , 6], type = "l", xlab = "time", ylab = "Fraction that a
 
 a. 
 
-The long-term dynamics for this reef do not look very good. Macroalgae, even when parrotfish population is set to small or large values (0.01 - 50) and coral makes up 75% of the cover, macroalgae takes over the coral. As macroalgae grows, however, so does conservation opinion. Conservation opinion seems to have grown too late to create change in this ecosystem.
+The long-term dynamics for this reef do not look very good if the parameters are not changed. Macroalgae, even when parrotfish population is set to small or large values (0.01 - 50) and coral makes up 75% of the cover, macroalgae takes over the coral. As macroalgae grows, however, so does conservation opinion. Conservation opinion seems to have grown too late to create change in this ecosystem.
 
-Regardless of initial parameters, this model shows it is unlikely to prevent macroalgae from taking over the reef. In order to prevent this from happening, additional influential factors could be added to the model.
+Increasing the growth rate of the parrotfish population, s, can greatly change the long-term dynamics of this system.
 
 b. 
 
-It seems as though macroalgae plats an important part in the long-term dynamics. If its population starts low, parrotfish quickly loose their food source. As soon as the parrotfish dissappaer, macroalgae growth takes off, which causes algal turf and coral populations to drop drastically.
+It seems as though macroalgae plays an important part in the long-term dynamics. If its population starts low, parrotfish quickly loose their food source. As soon as the parrotfish disappear, macroalgae growth takes off, which causes algal turf and coral populations to drop drastically.
 
+Parrotfish growth rate is important in determing long-term dynamics. Increasing their growth rate will reduce macroalgae growth and stabilize both algal turf and coral populations.
 
 **Part C**
 **Discussion**
 
 **#11.How did your predictions about the coupled socio-ecological systems line up with the results from the model? How did your results line up with the original modeling paper?**
 
-I don't believe our initial predictions aligned well with this model. Our group predicted parrotfish, coral, and willingness to participate would be the most influential drivers in this socio-ecological system. In comparison, macroalgae seems to drive the long term dynamics of this system. No matter how I change the parameters in 'yini', the macroalgae always grows exponentially while the other organisms die off. Willingness to participate grows as the macroalgae does, but it seems as though the willingness to participate increases after anything can actually be done to protect the coral. Unfortunately, it often seems something drastic must occur to nature before humans change their willingness to participate.
+I don't believe our initial predictions aligned well with this model if the original parameters were kept. Our group predicted parrotfish, coral, and willingness to participate would be the most influential drivers in this socio-ecological system. In comparison, macroalgae seems to drive the long term dynamics of this system if no parameters were changed. No matter how I change the parameters in 'yini', the macroalgae always grows exponentially while the other organisms die off. Willingness to participate grows as the macroalgae does, but it seems as though the willingness to participate increases after anything can actually be done to protect the coral. Unfortunately, it often seems something drastic must occur to nature before humans change their willingness to participate.
+
+Our initial predictions did align with the model after increasing parrotfish population growth. Parrotfish proved to be important in reducing macroalgae and stabilizing coral and algal turf. It is still interesting that as parrotfish and coral populations grow, willingness to participates declines. It would be interesting to try to understnad how to keep people enthusiastic even when the coral reef is healthy.
 
 
 **#12.How did your flow diagrams change over the course of the lessons? What did you learn through the process of developing flow diagrams with others?**
@@ -404,4 +409,4 @@ Working with this code was the most useful to me personally. I feel as though I 
 
 The equations were also useful for me - historically, I have always avoided math, but I am finding myself more and more drawn to quantitative analysis. I enjoyed going through each section of the equations and trying to determine how each segment influenced the others.
 
-And of course, coral reefs are such a fun subject to think on. I have my Advanced PADI and can remember a coral fish being the very first fish I saw underwater, but I know almost nothing about coral reefs. I really appreciate the applicableness of each case study provided in this class. I am not only just learning quantitative skills, but also about systems I have never studied/
+And of course, coral reefs are such a fun subject to think on. I have my Advanced PADI and can remember a coral fish being the very first fish I saw underwater, but I know almost nothing about coral reefs. I really appreciate the applicableness of each case study provided in this class. I am not only just learning quantitative skills, but also about systems I have never studied.
