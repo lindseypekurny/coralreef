@@ -329,13 +329,12 @@ knitr::include_graphics('Eco_Socio Flow chart.png')
 
 **#8.As a group, what do you predict will happen to the long-term dynamics when you couple the social and ecological systems together? Which parameters do you anticipate will be the most important for determining overall system dynamics?**
 
-Coupling the social and ecological systems together changes some of our expectations for the long-term dynamics of the overall system. The social system has the ability to influence the health of the ecological system. For example, if more people are willing to participate in conservation, more focus will be put on protecting corals and parrotfish. If, on the other hand, less people are willing to participate or value economic values of hunting smaller fish, like parrotfish, the ecological system may continue on its path to collapse.
-
+Coupling the social and ecological systems together changes some of our expectations for the long-term dynamics of the overall system. The social system has the ability to influence the health of the ecological system. For example, if more people are willing to participate in conservation, more focus will be put on protecting corals and parrotfish. If, on the other hand, less people are willing to participate or value the short-term economic benefits of hunting smaller fish, like parrotfish, the ecological system may continue on its path to collapse.
 
 
 **#9.Program the following model in R. Be sure to understand how the model is being coupled together. This is the same model you worked with in part A, but with the inclusion of the x-variable, which is the fraction of conservationists present in the population. The social dynamics team should help you with the interpretations of this equation.**
 
-More coral and more parrotfish, less conservation opinion? Hmmm...
+-> The more coral and more parrotfish, the less conservation opinion. Conservation opinion grows as macroalgae does.
 
 ```{r}
 
@@ -371,13 +370,13 @@ matplot(out[ , 1], out[ , 6], type = "l", xlab = "time", ylab = "Fraction that a
 
 a. 
 
-The long-term dynamics for this reef do not look very good. Macroalgae, even when parrotfish population is set to 0.99 and coral makes up 75% of the cover, macroalgae takes over the coral. As macroalgae grows, however, so does conservation opionion. Conservation opinion seems to have grown too late to create change in this ecosystem.
+The long-term dynamics for this reef do not look very good. Macroalgae, even when parrotfish population is set to small or large values (0.01 - 50) and coral makes up 75% of the cover, macroalgae takes over the coral. As macroalgae grows, however, so does conservation opinion. Conservation opinion seems to have grown too late to create change in this ecosystem.
 
 Regardless of initial parameters, this model shows it is unlikely to prevent macroalgae from taking over the reef. In order to prevent this from happening, additional influential factors could be added to the model.
 
 b. 
 
-It seems as though macroalgae plats an important part in the long-term dynamics. If its population starts low, parrotfish quickly loose their food source. As soon as the parrotfish disappaer, macroalgae growth takes off.
+It seems as though macroalgae plats an important part in the long-term dynamics. If its population starts low, parrotfish quickly loose their food source. As soon as the parrotfish dissappaer, macroalgae growth takes off, which causes algal turf and coral populations to drop drastically.
 
 
 **Part C**
@@ -385,20 +384,18 @@ It seems as though macroalgae plats an important part in the long-term dynamics.
 
 **#11.How did your predictions about the coupled socio-ecological systems line up with the results from the model? How did your results line up with the original modeling paper?**
 
-I don't believe our initial predictions aligned well with this model. Our group predicted parrotfish, coral, and willingness to participate would be the most influential drivers in this socio-ecological system. In comparison, macroalgae seems to drive the long term dynamics of this system. No matter how I change the parameters in 'yini', the macroalgae always grows exponentially while the other organisms die off. Willingness to participate grows as the macroalgae does, but it seems as though the willingness to participate increases after anything can actually be done to protect the coral.
-
-
+I don't believe our initial predictions aligned well with this model. Our group predicted parrotfish, coral, and willingness to participate would be the most influential drivers in this socio-ecological system. In comparison, macroalgae seems to drive the long term dynamics of this system. No matter how I change the parameters in 'yini', the macroalgae always grows exponentially while the other organisms die off. Willingness to participate grows as the macroalgae does, but it seems as though the willingness to participate increases after anything can actually be done to protect the coral. Unfortunately, it often seems something drastic must occur to nature before humans change their willingness to participate.
 
 
 **#12.How did your flow diagrams change over the course of the lessons? What did you learn through the process of developing flow diagrams with others?**
 
-Our first flow diagram was relatively complex. Our second diagram lost much of its complexity and was therefore easier to model. Joining up with the social team, however, added complexity to our flow diagram. Our diagrams were very circular and not linear. The non-linear nature of our flow diagrams displays how complex interactions really are; if you can just one parameter, it's effects may be felt directly by multiple other parameters.
+Our first flow diagram was relatively complex. Our second diagram lost much of its complexity and was therefore easier to model. Joining up with the social team, however, added complexity to our flow diagram. Our diagrams were very circular and not linear. The non-linear nature of our flow diagrams displays how complex interactions really are; if you can just one parameter, it's effects may be felt directly by multiple other parameters, which this model displays.
 
 **#13.What were the limitations of the coupled socio-ecological model used here? What changes would you make to the model?**
 
-Limitations of the coupled socio-ecological model may include the un-predictability of humans. Historically, human behavior is difficult to study. Unforeseen outside influences could potentially cause a large surge in support for conservation, or a large drop.
+Limitations of the coupled socio-ecological model may include the un-predictability of humans. Historically, human behavior is difficult to study. Unforeseen outside influences could potentially cause a large surge in support for conservation, or a large drop. Economics play a large part in human values, and I believe adding a parameter which models the local economics would increase the value of our model.
 
-This model also does not take into account disease. An outbreak of disease in any of the species in this model could drastically change the long-term dynamics of this system. If possible, I would include a segment including the probability of disease in this system.
+This model also does not take into account disease. An outbreak of disease in any of the species in this model could drastically change the long-term dynamics of this system. If possible, I would include a segment including the probability of disease in this system. I would also want to include any other potential predators of macroalgae, do only parrotfish consume marcoalgae? Or does macroalgae have other predators?
 
 
 **#14.What aspects of this assignment were most or least useful? How would you improve this assignment?**
@@ -407,4 +404,4 @@ Working with this code was the most useful to me personally. I feel as though I 
 
 The equations were also useful for me - historically, I have always avoided math, but I am finding myself more and more drawn to quantitative analysis. I enjoyed going through each section of the equations and trying to determine how each segment influenced the others.
 
-And of course, coral reefs are such a fun subject to think on. I have my Advanced PADI, but I know almost nothing about coral reefs. I really appreciate the applicableness of each case study provided in this class.
+And of course, coral reefs are such a fun subject to think on. I have my Advanced PADI and can remember a coral fish being the very first fish I saw underwater, but I know almost nothing about coral reefs. I really appreciate the applicableness of each case study provided in this class. I am not only just learning quantitative skills, but also about systems I have never studied/
